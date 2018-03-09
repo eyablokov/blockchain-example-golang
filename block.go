@@ -29,3 +29,10 @@ func (b *Block) SetHash() {
 
 	b.Hash = hash[:]
 }
+
+// NewBlock creates and returns Block
+func NewBlock(data string, prevBlockHash []byte) *Block {
+	block := &Block{time.Now().Unix(), []byte(data), prevBlockHash, []byte{}}
+	block.SetHash()
+	return block
+}
