@@ -36,3 +36,8 @@ func NewBlock(data string, prevBlockHash []byte) *Block {
 	block.SetHash()
 	return block
 }
+
+// NewGenesisBlock creates and returns genesis Block
+func NewGenesisBlock() *Block {
+	return NewBlock("Genesis Block", []byte{})
+}
